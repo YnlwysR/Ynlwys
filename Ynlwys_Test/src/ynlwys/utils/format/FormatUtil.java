@@ -1,18 +1,17 @@
 package ynlwys.utils.format;
 
 /**
- * ´´½¨Ê±¼ä: 2015Äê9ÔÂ11ÈÕ14:41:11.
+ * åˆ›å»ºæ—¶é—´: 2015å¹´9æœˆ11æ—¥14:50:48.
  * 
- * ¹¦ÄÜ: ÓÃÓÚ½øĞĞ¸ñÊ½»¯µÄ¹¤¾ßÀà.
+ * åŠŸèƒ½: æä¾›æ ¼å¼åŒ–ç±»çš„å·¥å…·ç±».
  * 
- * ½éÉÜ:
- * 		0,µ±ÖĞ°üº¬ÁË³£¹æµÄ¸ñÊ½»¯¹¤¾ß,ºÍ·Ç³£¹æµÄ¸ñÊ½»¯¹¤¾ß.
+ * ä»‹ç»:
+ * 		0,è¯¥å·¥å…·ç±»ä¸­åŒ…å«äº†å¸¸è§„çš„å’Œéå¸¸è§„çš„æ ¼å¼åŒ–æ–¹æ³•.
  * 
  * 
  * @author LiYinghao
  *
  */
-
 import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.ParseException;
@@ -20,6 +19,17 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * æ ¼å¼åŒ–å·¥å…·ç±» - å½“ä¸­å¯ä»¥å¯¹å¤šç§æ•°æ®è¿›è¡Œæ ¼å¼åŒ–.
+ * 
+ * æ—¶é—´:2015å¹´6æœˆ2æ—¥09:42:26.
+ * 	
+ * 		æ›´æ–°:
+ * 			0,åˆ¤æ–­ä¼ é€’çš„æ—¥æœŸæ˜¯ä¸æ˜¯ä¸Šä¸€ä¸ªæœˆ.
+ * 
+ * @author LiYinghao
+ *
+ */
 public class FormatUtil {
 	public static final String formatDate(Long time){
 		if(time == null)
@@ -44,7 +54,7 @@ public class FormatUtil {
 		return df.format(money);
 	}
 	/*
-	 * ½«×Ö·û´®ÈÕÆÚ×ª»»³É,ºÁÃëÖµÒ²¾ÍÊÇlongĞÍÊıÖµ.
+	 * å°†å­—ç¬¦ä¸²æ—¥æœŸè½¬æ¢æˆ,æ¯«ç§’å€¼ä¹Ÿå°±æ˜¯longå‹æ•°å€¼.
 	 * **/
 	public static long getdaytime(String date) throws ParseException {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
@@ -58,7 +68,7 @@ public class FormatUtil {
     }
 	
 	/**
-	 * ÅĞ¶ÏÇë¼ÙÈÕÆÚÊÇ²»ÊÇÉÏÒ»¸öÔÂ - Èç¹ûÏµÍ³Ê±¼äµÃµ½µÄÊÇ0.
+	 * åˆ¤æ–­è¯·å‡æ—¥æœŸæ˜¯ä¸æ˜¯ä¸Šä¸€ä¸ªæœˆ - å¦‚æœç³»ç»Ÿæ—¶é—´å¾—åˆ°çš„æ˜¯0.
 	 */
 	public static Boolean isAlike(String leaveDate) {
 		Calendar calendar = Calendar.getInstance();
@@ -68,7 +78,7 @@ public class FormatUtil {
 		String monthTemp = calendar.get(Calendar.MONTH) < 10 ? "0"+(calendar.get(Calendar.MONTH)) : (calendar.get(Calendar.MONTH)) + "";
 		String yearTemp = calendar.get(Calendar.YEAR) + "";
 		
-		/**#Èç¹ûÈ¡³öÀ´µÄÊÇ00ÄÇÃ´¾ÍÈÏÎªÊÇ12 - 1#*/
+		/**#å¦‚æœå–å‡ºæ¥çš„æ˜¯00é‚£ä¹ˆå°±è®¤ä¸ºæ˜¯12 - 1#*/
 		if(monthTemp.equals("00")) {
 			monthTemp = "12";
 		}
@@ -85,4 +95,3 @@ public class FormatUtil {
 		return df.format(parseDouble);
 	}
 }
-
